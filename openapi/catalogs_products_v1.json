@@ -139,13 +139,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "products"
         ]
@@ -244,13 +237,6 @@
             "$ref": "#/components/parameters/total_required"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "products"
         ]
@@ -343,13 +329,6 @@
           },
           {
             "$ref": "#/components/parameters/product_id"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
           }
         ],
         "tags": [
@@ -485,13 +464,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "products"
         ]
@@ -519,7 +491,19 @@
   ],
   "components": {
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/subscriptions": "Create and manage products"
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {

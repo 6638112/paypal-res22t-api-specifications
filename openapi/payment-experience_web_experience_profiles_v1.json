@@ -57,18 +57,6 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/web_profile"
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          },
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
-          }
-        ],
         "tags": [
           "web-profiles"
         ]
@@ -102,18 +90,6 @@
             "$ref": "#/components/responses/default"
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          },
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
-          }
-        ],
         "parameters": [
           {
             "$ref": "#/components/parameters/content_type"
@@ -158,18 +134,6 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/web_profile"
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          },
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
-          }
-        ],
         "tags": [
           "web-profiles"
         ]
@@ -218,18 +182,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          },
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
-          }
-        ],
         "tags": [
           "web-profiles"
         ]
@@ -271,18 +223,6 @@
             "$ref": "#/components/parameters/content_type"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          },
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
-          }
-        ],
         "tags": [
           "web-profiles"
         ]
@@ -315,18 +255,6 @@
           },
           {
             "$ref": "#/components/parameters/content_type"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          },
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
           }
         ],
         "tags": [
@@ -372,7 +300,20 @@
       }
     },
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/payments/payment": "New special privileged scope available for payment and manage payment experience profiles. Available to internal clients only.",
+              "https://uri.paypal.com/services/payments/realtimepayment": "Permission to do any real-time payment and manage-payment experience profiles with support for sale, authorize, and order intents."
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {

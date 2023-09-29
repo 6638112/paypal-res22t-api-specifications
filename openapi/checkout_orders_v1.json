@@ -48,7 +48,15 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/payments/payment",
+              "https://uri.paypal.com/services/payments/channelpartner",
+              "https://uri.paypal.com/services/payments/partnerfee",
+              "https://uri.paypal.com/services/payments/realtimepayment"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/payments/payment",
               "https://uri.paypal.com/services/payments/channelpartner",
               "https://uri.paypal.com/services/payments/partnerfee",
@@ -88,7 +96,15 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/payments/payment",
+              "https://uri.paypal.com/services/payments/channelpartner",
+              "https://uri.paypal.com/services/payments/partnerfee",
+              "https://uri.paypal.com/services/payments/realtimepayment"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/payments/payment",
               "https://uri.paypal.com/services/payments/channelpartner",
               "https://uri.paypal.com/services/payments/partnerfee",
@@ -115,14 +131,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/order_id"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
           }
         ],
         "tags": [
@@ -191,14 +199,6 @@
           },
           "required": true
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/realtimepayment"
-            ]
-          }
-        ],
         "tags": [
           "orders-payment-actions"
         ]
@@ -230,7 +230,24 @@
   ],
   "components": {
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/payments/payment": "Manage payments and checkout workflow.",
+              "https://uri.paypal.com/services/payments/unilateralrefund": "This scope enables partners/facilitators to perform unilateralrefund and also refund.",
+              "https://uri.paypal.com/services/payments/funding-options": "Access payer's funding options available for the payment.",
+              "https://uri.paypal.com/services/payments/channelpartner": "Permission to explicitly specify the receiver of a payment on request payload.",
+              "https://uri.paypal.com/services/payments/partnerfee": "Permission to partners to withdraw partner fee as part of the payment.",
+              "https://uri.paypal.com/services/payments/realtimepayment": "Permission to do any real time payment, with support for sale/authorize/order intents"
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {

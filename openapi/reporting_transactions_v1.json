@@ -72,7 +72,12 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/reporting/search/read"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/reporting/search/read"
             ]
           }
@@ -142,7 +147,12 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/reporting/balances/read"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/reporting/balances/read"
             ]
           }
@@ -182,7 +192,20 @@
   ],
   "components": {
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/reporting/search/read": "Transactions Search",
+              "https://uri.paypal.com/services/reporting/balances/read": "List Balances"
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {

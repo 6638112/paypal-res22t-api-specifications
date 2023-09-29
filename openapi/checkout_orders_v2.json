@@ -124,14 +124,6 @@
           },
           "required": true
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/orders/client-side-integration"
-            ]
-          }
-        ],
         "tags": [
           "orders"
         ]
@@ -200,14 +192,6 @@
           },
           {
             "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/orders/client-side-integration"
-            ]
           }
         ],
         "tags": [
@@ -305,14 +289,6 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/patch_request"
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/orders/client-side-integration"
-            ]
-          }
-        ],
         "tags": [
           "orders"
         ]
@@ -427,14 +403,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/initiatepayment"
-            ]
-          }
-        ],
         "tags": [
           "orders"
         ]
@@ -594,14 +562,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/orders/client-side-integration"
-            ]
-          }
-        ],
         "tags": [
           "orders"
         ]
@@ -761,14 +721,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment",
-              "https://uri.paypal.com/services/payments/orders/client-side-integration"
-            ]
-          }
-        ],
         "tags": [
           "orders"
         ]
@@ -903,13 +855,6 @@
           },
           "required": true
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          }
-        ],
         "tags": [
           "orders"
         ]
@@ -1020,13 +965,6 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/patch_request"
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/payments/payment"
-            ]
-          }
-        ],
         "tags": [
           "trackers"
         ]
@@ -1074,9 +1012,24 @@
       }
     },
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
         "type": "oauth2",
-        "description": "Oauth 2.0 authentication",
+        "description": "Oauth 2.0 authentication (sandbox environment)",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/payments/payment": "Manage payments and checkout workflow.",
+              "https://uri.paypal.com/services/payments/payment/reference-transaction": "Permission to initiate reference transaction",
+              "https://uri.paypal.com/services/payments/initiatepayment": "Initiates payments and checkout workflows.",
+              "https://uri.paypal.com/services/payments/orders/client-side-integration": "Allows client-side integration on Create, Get, Patch, Authorize & Capture Order endpoints."
+            }
+          }
+        }
+      },
+      "production": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication (production environment)",
         "flows": {
           "clientCredentials": {
             "tokenUrl": "/v1/oauth2/token",

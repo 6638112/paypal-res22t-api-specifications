@@ -73,27 +73,52 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read-buyer"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read-ebay"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/read-partner"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read-seller"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read-ebay"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/read-partner"
             ]
           }
@@ -140,27 +165,52 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read-buyer"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read-ebay"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/read"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/read-partner"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read-seller"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read-ebay"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/read"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/read-partner"
             ]
           }
@@ -234,7 +284,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           }
@@ -287,17 +342,32 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-partner"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-partner"
             ]
           }
@@ -350,12 +420,22 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -421,7 +501,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           }
@@ -520,12 +605,22 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -625,12 +720,22 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -729,12 +834,22 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -820,12 +935,22 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -924,12 +1049,22 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -1038,7 +1173,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -1137,7 +1277,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-buyer"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-buyer"
             ]
           }
@@ -1223,7 +1368,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-seller"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-seller"
             ]
           }
@@ -1319,7 +1469,14 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/disputes/update-seller",
+              "https://uri.paypal.com/services/disputes/update-buyer",
+              "https://uri.paypal.com/services/disputes/update-partner"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/disputes/update-seller",
               "https://uri.paypal.com/services/disputes/update-buyer",
               "https://uri.paypal.com/services/disputes/update-partner"
@@ -1444,7 +1601,29 @@
       }
     },
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/disputes/read-seller": "This privilege allows client to read and search a disputes of a merchant but gets only a limited and allowed set of fields back .",
+              "https://uri.paypal.com/services/disputes/read-buyer": "This privilege allows client to read and search disputes but returns a limited and allowed set of fields back.",
+              "https://uri.paypal.com/services/disputes/read-ebay": "This privilege allows client to read and search a disputes of an user but gets only a limited and allowed set of fields back to ebay.",
+              "https://uri.paypal.com/services/disputes/read": "This privilege allows client to read and search a dispute of an user with all fields.",
+              "https://uri.paypal.com/services/disputes/webhooks": "This privilege allows webhook platform to read a dispute event",
+              "https://uri.paypal.com/services/disputes/create": "This privilege allows client to validate eligibility and create a dispute on his transaction(s).",
+              "https://uri.paypal.com/services/disputes/update-seller": "This privilege allows client to update a dispute (Merchant actions).",
+              "https://uri.paypal.com/services/disputes/update-buyer": "This privilege allows client to update a dispute (customer actions).",
+              "https://uri.paypal.com/services/referred-disputes/readwrite": "This privilege allows client to read and update a referred dispute.",
+              "https://uri.paypal.com/services/disputes/read-partner": "This privilege allows client to read and search disputes but returns a limited and allowed set of fields back.",
+              "https://uri.paypal.com/services/disputes/update-partner": "This privilege allows client to update a dispute (Partner actions)."
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {

@@ -144,13 +144,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "plans"
         ]
@@ -271,13 +264,6 @@
             "$ref": "#/components/parameters/statuses"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "plans"
         ]
@@ -373,13 +359,6 @@
           },
           {
             "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
           }
         ],
         "tags": [
@@ -504,13 +483,6 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/patch_request"
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "plans"
         ]
@@ -615,13 +587,6 @@
             "$ref": "#/components/parameters/id"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "plans"
         ]
@@ -724,13 +689,6 @@
           },
           {
             "$ref": "#/components/parameters/id"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
           }
         ],
         "tags": [
@@ -868,13 +826,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "plans"
         ]
@@ -1023,13 +974,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -1125,13 +1069,6 @@
           },
           {
             "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
           }
         ],
         "tags": [
@@ -1256,13 +1193,6 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/patch_request"
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -1410,13 +1340,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -1552,13 +1475,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -1694,13 +1610,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -1836,13 +1745,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -1991,13 +1893,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -2115,13 +2010,6 @@
             "$ref": "#/components/parameters/end_time"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/subscriptions"
-            ]
-          }
-        ],
         "tags": [
           "subscriptions"
         ]
@@ -2169,7 +2057,19 @@
       }
     },
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/subscriptions": "Manage plan & subscription"
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {

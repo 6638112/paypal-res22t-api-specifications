@@ -43,7 +43,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/shipping/trackers/readwrite"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/shipping/trackers/readwrite"
             ]
           }
@@ -78,7 +83,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/shipping/trackers/readwrite"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/shipping/trackers/readwrite"
             ]
           }
@@ -116,7 +126,12 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/shipping/trackers/read"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/shipping/trackers/read"
             ]
           }
@@ -155,7 +170,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/shipping/trackers/readwrite"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/shipping/trackers/readwrite"
             ]
           }
@@ -195,7 +215,12 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/shipping/trackers/read"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/shipping/trackers/read"
             ]
           }
@@ -259,12 +284,25 @@
       }
     },
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {
           "clientCredentials": {
             "tokenUrl": "/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/shipping/trackers/readwrite": "Create or update tracking information",
+              "https://uri.paypal.com/services/shipping/trackers/read": "Retrieve tracking information"
+            }
+          }
+        }
+      },
+      "production": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.paypal.com/v1/oauth2/token",
             "scopes": {
               "https://uri.paypal.com/services/shipping/trackers/readwrite": "Create or update tracking information",
               "https://uri.paypal.com/services/shipping/trackers/read": "Retrieve tracking information"

@@ -116,7 +116,12 @@
         },
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/customer/partner-referrals/readwrite"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/customer/partner-referrals/readwrite"
             ]
           }
@@ -202,12 +207,22 @@
         ],
         "security": [
           {
-            "Oauth2": [
+            "sandbox": [
               "https://uri.paypal.com/services/customer/partner-referrals/readwrite"
             ]
           },
           {
-            "Oauth2": [
+            "sandbox": [
+              "https://uri.paypal.com/services/customer/partner-referrals"
+            ]
+          },
+          {
+            "production": [
+              "https://uri.paypal.com/services/customer/partner-referrals/readwrite"
+            ]
+          },
+          {
+            "production": [
               "https://uri.paypal.com/services/customer/partner-referrals"
             ]
           }
@@ -239,7 +254,21 @@
   ],
   "components": {
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/customer/partner": "Manage seller resources.",
+              "https://uri.paypal.com/services/customer/partner-referrals/readwrite": "Manage external referral data with PayPal",
+              "https://uri.paypal.com/services/customer/partner-referrals": "Manage referral data shared by Partner with PayPal. To be used by only internal apps"
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {

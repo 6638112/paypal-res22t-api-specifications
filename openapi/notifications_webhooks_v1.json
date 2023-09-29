@@ -40,13 +40,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks"
         ]
@@ -73,13 +66,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/anchor_type"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
           }
         ],
         "tags": [
@@ -110,13 +96,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/webhook_id"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
           }
         ],
         "tags": [
@@ -150,13 +129,6 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/patch_request"
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks"
         ]
@@ -176,13 +148,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/webhook_id"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
           }
         ],
         "tags": [
@@ -215,13 +180,6 @@
             "$ref": "#/components/parameters/webhook_id"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks"
         ]
@@ -247,13 +205,6 @@
             "$ref": "#/components/responses/default"
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks-lookup"
         ]
@@ -277,13 +228,6 @@
             "$ref": "#/components/responses/default"
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks-lookup"
         ]
@@ -314,13 +258,6 @@
             "$ref": "#/components/parameters/webhook_lookup_id"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks-lookup"
         ]
@@ -340,13 +277,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/webhook_lookup_id"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
           }
         ],
         "tags": [
@@ -388,13 +318,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "verify-webhook-signature"
         ]
@@ -420,13 +343,6 @@
             "$ref": "#/components/responses/default"
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks-event-types"
         ]
@@ -469,13 +385,6 @@
             "$ref": "#/components/parameters/event_type"
           }
         ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks-events"
         ]
@@ -504,13 +413,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/event_id"
-          }
-        ],
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
           }
         ],
         "tags": [
@@ -557,13 +459,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "webhooks-events"
         ]
@@ -603,13 +498,6 @@
             }
           }
         },
-        "security": [
-          {
-            "Oauth2": [
-              "https://uri.paypal.com/services/applications/webhooks"
-            ]
-          }
-        ],
         "tags": [
           "simulate-event"
         ]
@@ -697,7 +585,19 @@
       }
     },
     "securitySchemes": {
-      "Oauth2": {
+      "sandbox": {
+        "type": "oauth2",
+        "description": "Oauth 2.0 authentication",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+            "scopes": {
+              "https://uri.paypal.com/services/applications/webhooks": "Access/update Webhooks."
+            }
+          }
+        }
+      },
+      "production": {
         "type": "oauth2",
         "description": "Oauth 2.0 authentication",
         "flows": {
